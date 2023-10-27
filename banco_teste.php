@@ -2,9 +2,9 @@
 
 $bd_host = "200.19.1.18";
 $sgbd = "pgsql";
-$base_de_dados = "isadoramartins";
-$bd_usuario = "isadoramartins";
-$bd_senha = "123456";
+$base_de_dados = "";
+$bd_usuario = "";
+$bd_senha = "";
 
 switch ($sgbd) {
     case "mysql":
