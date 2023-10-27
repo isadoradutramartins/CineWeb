@@ -1,0 +1,126 @@
+.info { /*deixando a largura do tamanho da tela*/
+    width: 100%;
+}
+
+.info h1 { /*ajeitando o local do título e tamanho*/
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+    text-align: left;
+}
+
+#paragrafo {
+    text-align: left;
+    width:100%;
+    font-size: large;
+    padding-top: 50px;
+}
+
+.tabela {
+    margin-top: 0px;
+}
+
+.tabela:hover {
+    color:#1154ab;
+}
+
+/*.trailers { /*ajeita a área do formulário*/
+    /*display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212); /* sombra ao redor do box */
+/*}
+
+#div { /* deixa um do lado do outro */
+   /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1% 0;
+    width: 100%;
+}
+
+#videos { /* cria espaçamento */
+   /* display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+}*/
+
+
+.info h1::after { /* cria linha embaixo do titulo */
+    content: '';
+    padding: 0 !important;
+    display: block;
+    width: 6rem;
+    height: 0.3rem;
+    background-color:#1154ab;
+    margin: auto;
+    position: absolute;
+    border-radius: 10px;
+} 
+
+
+ /*h1{
+    color:#fd2c2c;
+}
+*/
+.centro h2 {
+    color:#090909;
+}
+.centro span{
+    color: #1154ab;
+}
+
+.centro h1{
+    color:#090909;
+}
+/*ESTILIZANDO A TABELA*/
+.info table { /*ajeitando o local e tamanho da tabela*/
+    text-align: center;
+    width: 100%; /* colocando a tabela no tamanho da tela*/
+}
+
+th { 
+    color: #090909;
+}
+
+td {
+    color: #090909;
+}
+
+table, th,td { /*ajeitando a cor das bordas da tabelas*/
+    border: 1px solid #1154ab/*#1154ab*/;
+    border-collapse: collapse;
+    height:50px;
+ }
+
+ div .table {
+    text-align: center;
+    width:100%;
+ }
+
+ tr:hover { /*muda a cor quando o mouse está sobre a tabela*/
+    background-color: #fecbcb !important;
+ }
+
+ .info #video { /*ajeitando o local e tamanho do video*/
+    margin-top: 20px;
+    width: 50%;
+}
+@media (max-width: 800px) { /* para formatação de mobile */
+    .info {
+        text-align: center;
+    }
+    .info h1 {
+        margin: 0 5% 0 5%;
+        width: 100%;
+    }
+    .info table {
+        margin: 0 5% 0 5%;
+        width: 100%;
+    }
+    .info #video {
+        margin: 0 5% 5% 5%;
+        width: 100%;
+    }
+}

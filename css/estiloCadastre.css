@@ -1,0 +1,105 @@
+#centroTrabalhe{
+    align-items: center;
+    margin-left: 28%;
+    margin-right: auto;
+}
+.centro span{
+    color: #1154ab;
+}
+form { /*ajeita a área do formulário*/
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212); /* sombra ao redor do box */
+}
+
+.form-header h1::after { /* cria linha embaixo do titulo */
+    content: '';
+    padding: 0 !important;
+    display: block;
+    width: 10rem;
+    height: 0.3rem;
+    background-color:#1154ab;
+    margin: auto;
+    position: absolute;
+    border-radius: 10px;
+    
+} 
+
+h1 {
+    padding: 1.5rem; 
+}
+
+.todosInputs { /* deixa um do lado do outro */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1% 0;
+    width: 100%;
+}
+
+.inputBox { /* cria espaçamento */
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+}
+
+.inputBox input { /* personaliza os inputs */
+    padding: 0.8rem 1.3rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
+
+.inputBox input:hover { /* muda o fundo quando passa o mouse */
+    background-color: #56c1f3;
+}
+
+.inputBox input:focus-visible { /* muda cor da borda quando clica */
+    outline: 1px solid #1154ab;
+}
+
+.inputBox label {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+
+
+#tituloGenero {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+.inputGenero label {
+    font-weight: normal;
+}
+
+.inputtipo label {
+    font-weight: normal;
+}
+/*ESTILIZANDO O BOTÃO ENVIAR*/
+.botaoEnviar {
+    padding: 5%;
+    display: flex;
+    width: 100%;
+}
+.botaoEnviar input {
+    width: 50%;
+    border: none;
+    background-color: #ffffff;
+    padding: 1%;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #1154ab;
+    font-weight: bold;
+    outline: 1px solid #1154ab;
+    margin: 0 auto;
+}
+.botaoEnviar input:hover {/* muda a cor do botão enviar quando passa o mouse */
+    background-color: #1154ab;
+    color: #ffffff;
+}
