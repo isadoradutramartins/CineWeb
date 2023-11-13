@@ -1,13 +1,51 @@
 <?php
+include("config.php");
 
-//include("banco_login.php");
+$erro = ""; // Inicialize a variável $erro
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['email']) && isset($_POST['senha'])) {
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        $sql = "SELECT id_usuario, email_usuario, senha_usuario, fl_adm FROM tb_usuario WHERE email_usuario = :email";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $usuario = $stmt->fetch();
 
 
+if ($usuario) {
+    $senha_md5 = md5($senha);
+
+    if ($senha_md5 === $usuario['senha_usuario']) {
+        session_start();
+
+                // Atribui o id_usuario à variável de sessão
+        $_SESSION['id_usuario'] = $usuario['id_usuario'];
+        if ($usuario['fl_adm'] === true) { 
+            // Redirecionando para a página de administrador
+            header("Location: adm/inicial.php");
+            exit();
+        } else {
+            // Redirecionando para a página de usuário normal
+            header("Location: user/home.php");
+            exit();
+        }
+    } else {
+        $erro = "Credenciais inválidas. Tente novamente.";
+    }
+} else {
+    $erro = "Credenciais inválidas. Tente novamente.";
+}
+
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title> Trabalhe Conosco </title>
+        <title> Login </title>
         <link rel="icon" type="imagem/png" href="imagens/MiaBoutique_logo.png" width="900" height="1000" />
         <link href="css/estilo.css" rel="stylesheet" />
         <link href="css/estiloCadastre.css" rel="stylesheet" />
@@ -19,13 +57,17 @@
 
 <body bgcolor="#f8e1e1">
     
-    <header>
-           <div class="centro">
+<header><!--menu no topo da pagina-->
+        <div class="centro">
            <h2>CINE<span>WEB</span></h2>
-    </div>
+            <nav class="menu">
+                <a class="link" href="login.php">Log in</a>
+                <a class="link" href="cadastre.php">Cadastre-se</a>
+            </nav>
+        </div>
     </header>
     <div class="centro" id="centroTrabalhe">
-        <form action="banco_login.php" method="post" onsubmit="enviarForm()"> <!--EVENTO QUE ATIVA A FUNÇÃO NA HORA DE ENVIAR O FORMULARIO-->
+        <form action="login.php" method="post" onsubmit="enviarForm()"> <!--EVENTO QUE ATIVA A FUNÇÃO NA HORA DE ENVIAR O FORMULARIO-->
             <div class="form-header">
                 <div class="titulo">
                     <h1> Log in </h1>
@@ -33,6 +75,12 @@
             </div> <!-- form-header -->
              
             <div class="todosInputs">
+
+            <?php if (!empty($erro)) { ?>
+                <div class="erro">
+                   <p> <?php echo $erro; ?></p>
+                </div>
+            <?php } ?>
 
                 <div class="inputBox">
                     <label for="email"> Email: </label>
@@ -43,13 +91,6 @@
                     <label for="senha"> Senha: </label>
                     <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required="required">
                 </div> <!-- inputBox -->
-
-                <?php if (!empty($erro)) { ?>
-                   <div class="erro">
-                   <?php echo $erro; ?>
-                   </div>
-                <?php } ?>
-
 
             <div class="botaoEnviar">
                 <input type="submit" value="Enviar">
