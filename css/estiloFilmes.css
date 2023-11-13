@@ -1,0 +1,56 @@
+#centroProdutos { 
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+#centroProduto a {
+    text-decoration: none;
+    color: black;
+}
+
+.filmes { /*deixando a largura do tamanho da tela*/
+    width: 100%;
+}
+
+.filmes h1 { /*ajeitando o local do título e tamanho*/
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+.titulo {
+    margin-top: 0px;
+}
+
+.titulo:hover {
+    color: #1154ab;
+}
+
+.card img{ /*ajeitando tamanho das fotos*/
+    width: 16rem;
+    border-radius: 10px 10px 0 0;
+   
+}
+
+
+.card {
+    text-align: center;
+    box-shadow: 10px 5px 10px rgba(85, 85, 85, 0.212); /*especifica a opacidade do card*/
+    border-radius: 10px;
+    margin: 0 5rem 2rem;
+}
+
+.card p {
+    font-weight: bold; /*deixa a fonte em negrito*/
+    padding: 0.5rem;
+}
+
+.card:hover { /*Este seletor direciona elementos com a classe "card" quando estão passando o mouse*/
+    color: #ffffff;
+    background-color: #1154ab;
+}
+.centro span{
+    color: #1154ab;
+}

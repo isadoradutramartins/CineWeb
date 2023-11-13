@@ -28,6 +28,103 @@ header {
 .menu {
     padding-top: 0px;
     width: 100%; 
+    text-align: center;
+    font-size: large;
+    
+}
+
+.menu a {
+    color:#090909;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 10px;
+	position: relative;
+
+}
+
+.link:hover { /*muda a cor quando o mouse está por cima*/
+    color: #1154ab;
+}
+
+.link:before { /*Aplica certos estilos para criar uma linha oculta que pode ser revelada com um efeito de transição.*/
+	content: ""; /*define o conteúdo do pseudo-elemento para uma string vazia.*/
+	position: absolute;
+	width: 80%;
+    left: 12px;
+	height: 1.5px; /* espessura da linha */
+	bottom: -2px; /* linha aparecer embaixo */
+	background-color: #1154ab;
+	visibility: hidden; /*esconde o pseudo-elemento inicialmente.*/
+	-webkit-transform: scaleX(0); /*dimensione o pseudoelemento horizontalmente para 0, ocultando-o efetivamente.*/
+	transform: scaleX(0); 
+	-webkit-transition: all 0.3s ease-in-out 0s; /*aplique um efeito de transição a todas as propriedades CSS, fazendo com que as alterações entrem em vigor em um período de 0,3 segundos com uma função de temporização de facilidade de entrada e saída.*/
+	transition: all 0.3s ease-in-out 0s;
+
+}
+
+.link:hover:before { /*estilizando quando o mouse está em cima do menu*/
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1.4);
+}
+/*ESTILIZANDO NOSSOS NOMES NO FINAL DA PAGINA*/
+.footer-bottom { /*ajeitando o tamanho e a posição do rodapé*/
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom a { 
+    color:#222; /*cor*/
+    font-size: 14px; /*tamanho da fonte*/
+    margin-left: 20px; /*posição*/
+    text-decoration: none;
+}
+
+.box {
+    margin: auto;
+    margin-top:100px;
+    position: center;
+}
+
+@media (max-width: 600px) {
+    h2 {
+        width: 20%;
+    }
+    .menu {
+        width: 80%;
+    }
+}@import url(https://fonts.googleapis.com/css?family=Montserrat); /* pega uma fonte do google */
+
+
+
+
+* { /*seletor tem como alvo todos os elementos da página. As seguintes propriedades são então aplicadas a todos os elementos*/
+    margin: 0; /*removendo qualquer espaçamento padrão.*/
+    padding: 0;/*removendo qualquer preenchimento padrão.*/
+    box-sizing: border-box;/*define a propriedade box-sizing de todos os elementos como "border-box", que inclui a borda e o preenchimento do elemento em sua largura e altura totais.*/
+    font-family: 'Montserrat';/*define a propriedade font-family de todos os elementos como 'Montserrat', que é a fonte importada do Google Fonts.*/
+}
+
+.centro {
+    display: flex;
+    flex-wrap: wrap; /* deixa na mesma linha */
+    max-width: 1280px; /* limita a largura */
+    margin: 0 auto;
+    padding: 0.2%;
+}
+
+header {
+    height: 100px; /*tamanho - altura*/
+    padding: 20px 0;
+
+}
+
+/*ESILIZANDO CLASS MENU*/
+.menu {
+    padding-top: 0px;
+    width: 100%; 
     text-align: right;
     font-size: large;
     
