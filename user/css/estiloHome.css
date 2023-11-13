@@ -1,0 +1,104 @@
+html, body {
+    height: 100%;
+    overflow-y: hidden; /* não cria barra de rolagem vertical */
+    overflow-x: hidden; /* não cria barra de rolagem horizontal */
+}
+
+h1 {
+    padding-top: 7%;
+}
+
+.centro h2 {
+
+    color:#090909;
+}
+
+.centro span{
+    color: #1154ab;
+}
+
+.text {
+    color:#090909;
+}
+
+
+.background {
+    background-color: linear-gradient(to right, blue, red);
+}
+
+/*ESTILIZANDO OS TEXTOS DO INDEX*/
+.text h1{
+    font-size: 45px;
+   color:  #090909;
+}
+.text span{
+    color: #1154ab;
+}
+.text{
+    margin-left: 100px;
+}
+.text pre{
+    margin-top: 20px;
+    font-size: large;
+}
+/*ESTILIZANDO O BOTÃO */
+.content .text a{
+    display: inline-block; /*permite que ele ocupe apenas o espaço necessário e permitindo que outros elementos fiquem ao lado dele.*/
+    margin-top: 50px;
+    padding: 10px 25px;
+    background: #1154ab;
+    color: #fff;
+    font-weight: 500;
+    font-size: large;
+    letter-spacing: 1px; /*Adiciona um espaçamento de 1 pixel entre as letras do texto*/
+    text-decoration: none; /*Remove a decoração de sublinhado do texto do elemento <a>.*/
+    border-radius: 40px; /*Aplica um raio de borda de 40 pixels, arredondando as bordas do elemento <a>.*/
+    transition: 0.3s ease-in-out; /*Adiciona uma transição suave às propriedades alteradas, com uma duração de 0.3 segundos e uma função de transição "ease-in-out", que cria uma transição suave de entrada e saída.*/
+}
+.content .text a:hover{
+    transform: translateY(-10px); /* Essa propriedade de transformação move o elemento <a> 10 pixels para cima (-10px) em relação à sua posição original quando o mouse está sobre ele (hover).*/
+}
+/*ESTILIZANDO OS ICONES DAS REDES SOCIAIS*/
+.icons{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;/*Define a distância entre o elemento e a borda esquerda */
+    display: flex;
+    justify-content: center; /*Centraliza horizontalmente os filhos do elemento dentro dele, ao longo do eixo principal.*/
+    align-items: center; /*Centraliza verticalmente os filhos do elemento dentro dele, ao longo do eixo transversal./*
+}
+.icons li{ /*Esse seletor CSS seleciona os elementos <li> que estão dentro dos elementos com a classe "icons".*/
+    list-style: none; /*Remove os marcadores de lista padrão dos elementos <li>. Isso remove os pontos ou números geralmente exibidos antes de cada item de lista.*/
+}
+.icons li a{
+    display: inline-block; /*: Isso define o elemento <a> como um bloco inline, permitindo que ele ocupe apenas o espaço necessário e permitindo que outros elementos fiquem ao lado dele.*/
+    margin-left: 45px;
+    background: #161416;
+    width: 50px;/*Define a largura do elemento <a> como 50 pixels.*/
+    height: 50px; /*Define a altura do elemento <a> como 50 pixels.*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /*Aplica um raio de borda de 50%, criando um formato circular */
+    transition:  0.3s ease-in-out;/*Adiciona uma transição suave às propriedades alteradas, com uma duração de 0.3 segundos e uma função de transição "ease-in-out", que cria uma transição suave de entrada e saída.*/
+}
+.icons li a:hover{
+    background: #1154ab;
+    transform: translateY(-10px); /* Essa propriedade de transformação move os elementos <a> em estado de "hover" 10 pixels para cima (-10px) em relação à sua posição original. Isso cria um efeito de deslocamento para cima quando o cursor do mouse está sobre esses elementos.*/
+}
+.icons li a img{
+    filter: invert(1); /* Essa propriedade de filtro inverte as cores das imagens. Ao definir o valor como 1, a imagem será invertida verticalmente. Isso pode ser usado para criar um efeito de negativo ou alterar as cores da imagem.*/
+    transform: scale(0.5);/*Essa propriedade de transformação dimensiona as imagens em 50% do tamanho original. Ao definir o valor como 0.5, as imagens serão reduzidas pela metade.*/
+}
+
+
+
+
+
+/* para formatação de mobile */
+@media (max-width: 1000px) { 
+    html, body {
+        overflow-y: scroll; /* cria novamente a barra de rolagem vertical */
+        overflow-x: scroll; /* cria novamente a barra de rolagem horizontal */
+    }
+}
