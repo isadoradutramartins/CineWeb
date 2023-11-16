@@ -37,29 +37,6 @@ if (isset($_SESSION['id_usuario'])) {
         </div>
     </header>
 
-    <?php
-    include ("config2.php");
-      switch(@$_REQUEST["page"]) {
-        case "novo":
-            include("formularios/nova_review.php");
-            break;
-        case "listar": 
-            include("listar/listar_review.php");
-            break;
-        case "salvar":
-            include("salvar/salvar_review.php");
-            break;
-        case "update":
-            include ("salvar/update_review.php");
-            break;
-        case "cadastrar":
-            include ("formularios/cadastrar_filme.php");
-            break;
-        default:
-        print("<h1>Bem vindos!</h1>");
-        
-      }
-    ?>
 </body>
 
         </html>

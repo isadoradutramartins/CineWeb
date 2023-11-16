@@ -55,20 +55,29 @@ $pais = $stmt_pais->fetch(PDO::FETCH_ASSOC);
             <link href="css/estilo.css" rel="stylesheet" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
             <meta charset="utf-8">
-        </head>
-        <body bgcolor="#f8e1e1">
-            <header>
-                <div class="centro">
-                    <h2>CINE<span>WEB</span></h2>
-                    <nav class="menu">
-                        <a class="link" href="home.php">Home</a>
-                        <a class="link" href="filmes_user.php">Filmes</a>
-                        <a class="link" href="minhas_reviews.php">Minhas reviews</a>
-                        <a class="link" href="cadastrar_adm.php">Perfil</a>
-                        <a class="link" href="..//index.php">Sair</a>
-                    </nav>
-                </div>
-            </header>
+
+    <script>
+        function sair() {
+        if (confirm('Tem certeza que deseja sair?')) {
+            window.location.href = '..//index.php';
+        }
+    }
+</script>
+</head>
+<body bgcolor="#f8e1e1">
+<header><!--menu no topo da pagina-->
+        <div class="centro">
+           <h2>CINE<span>WEB</span></h2>
+            <nav class="menu">
+                <a class="link" href="home.php">Home</a>
+                <a class="link" href="filmes_user.php">Filmes</a>
+                <a class="link" href="minhas_reviews.php">Minhas reviews</a>
+                <a class="link" href="cadastrar_adm.php">Perfil</a>
+                <a class="link" onclick="sair()">Sair</a>
+            </div>
+            </nav>
+        </div>
+    </header>
 
             <div class="centro" id="centroTrabalhe">
                 <form action="banco_editar_review.php" method="POST" enctype="multipart/form-data">
