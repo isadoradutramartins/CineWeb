@@ -36,7 +36,7 @@ include ("config3.php");
                 <a class="link" href="home.php">Home</a>
                 <a class="link" href="filmes_user.php">Filmes</a>
                 <a class="link" href="minhas_reviews.php">Minhas reviews</a>
-                <a class="link" href="cadastrar_adm.php">Perfil</a>
+                <a class="link" href="perfil.php">Perfil</a>
                 <a class="link" onclick="sair()">Sair</a>
             </div>
             </nav>
@@ -55,10 +55,11 @@ if (!$conn) {
 } else {
     $id_usuario = $_SESSION['id_usuario'];
 
-    $query = "SELECT A.id_filme, A.nm_filme, A.poster_filme, B.id_review, B.nm_review, B.nota_review, B.ds_review FROM tb_filme A, tb_review B
+    $query = "SELECT A.id_filme, A.nm_filme, A.poster_filme, B.id_review, B.nm_review, B.nota_review, B.ds_review, B.dt_review FROM tb_filme A, tb_review B
     WHERE A.id_filme = B.id_filme AND
     B.id_usuario = $id_usuario AND
-    B.id_usuario = $1";
+    B.id_usuario = $1
+    ORDER BY B.id_review DESC";
     $result = pg_query_params($conn, $query, array($id_usuario));
 
     if ($result) {
@@ -67,11 +68,12 @@ if (!$conn) {
 ?>
 <div class="container">
         <div class="wrapper">
+        <div class="data">
+        <p><?php echo date('d/m/y', strtotime($row['dt_review'])); ?></p><br>
+    </div>
         <img src="<?php echo $row['poster_filme']; ?>">
          </div>
          <div class="button-wrapper"> 
-            <!--<button class="btn outline">DETAILS</button>
-           <button class="btn fill">BUY NOW</button>-->
             <h1><?php echo $row['nm_filme']; ?></h1>
             <h2>Nota: <?php echo $row['nota_review'];?></h2><br>
             <h3><?php echo $row['nm_review'];?></h3><br>

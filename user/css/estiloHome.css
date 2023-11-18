@@ -1,7 +1,6 @@
 html, body {
     height: 100%;
-    overflow-y: hidden; /* não cria barra de rolagem vertical */
-    overflow-x: hidden; /* não cria barra de rolagem horizontal */
+    /* não cria barra de rolagem horizontal */
 }
 
 h1 {

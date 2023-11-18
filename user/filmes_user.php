@@ -11,7 +11,7 @@ include ("config3.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <script type="text/javascript" src="js/arq.js"></script>
     <meta charset="utf-8">
-    
+
     <script>
 function sair() {
         if (confirm('Tem certeza que deseja sair?')) {
@@ -28,7 +28,7 @@ function sair() {
                 <a class="link" href="home.php">Home</a>
                 <a class="link" href="filmes_user.php">Filmes</a>
                 <a class="link" href="minhas_reviews.php">Minhas reviews</a>
-                <a class="link" href="cadastrar_adm.php">Perfil</a>
+                <a class="link" href="perfil.php">Perfil</a>
                 <a class="link" onclick="sair()">Sair</a>
             </div>
             </nav>
@@ -47,7 +47,8 @@ function sair() {
             }
 
             // Query para obter informações dos filmes
-            $query = "SELECT id_filme, nm_filme, dt_lancamento, poster_filme FROM tb_filme";
+            $query = "SELECT id_filme, nm_filme, dt_lancamento, poster_filme FROM tb_filme
+            ORDER BY id_filme DESC";
             $result = pg_query($conn, $query);
 
             // Exibir os cards com base nos resultados do banco de dados

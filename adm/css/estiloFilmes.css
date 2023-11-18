@@ -20,6 +20,11 @@
     text-align: center;
 }
 
+.filmes p { /*ajeitando o local do título e tamanho*/
+    width: 100%;
+    text-align: center;
+}
+
 .titulo {
     margin-top: 0px;
 }
@@ -31,7 +36,6 @@
 .card img{ /*ajeitando tamanho das fotos*/
     width: 16rem;
     border-radius: 10px 10px 0 0;
-  
    
 }
 
@@ -65,4 +69,3 @@
     border-radius: 10px;
     cursor: pointer;
 }
-

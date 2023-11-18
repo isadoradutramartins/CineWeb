@@ -72,7 +72,7 @@ $pais = $stmt_pais->fetch(PDO::FETCH_ASSOC);
                 <a class="link" href="home.php">Home</a>
                 <a class="link" href="filmes_user.php">Filmes</a>
                 <a class="link" href="minhas_reviews.php">Minhas reviews</a>
-                <a class="link" href="cadastrar_adm.php">Perfil</a>
+                <a class="link" href="perfil.php">Perfil</a>
                 <a class="link" onclick="sair()">Sair</a>
             </div>
             </nav>

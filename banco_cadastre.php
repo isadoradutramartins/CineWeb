@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':selecao_pais', $selecao_pais);
     $stmt->execute();
 
-    header("Location: adm/inicial.php"); // Redirecione para a página de filmes ou outra página desejada
+    header("Location: user/home.php"); // Redirecione para a página de filmes ou outra página desejada
     exit();
 }
 

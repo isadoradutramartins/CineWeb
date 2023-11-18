@@ -51,7 +51,8 @@ if (isset($_SESSION['id_usuario'])) {
             }
 
             // Query para obter informações dos filmes
-            $query = "SELECT id_filme, nm_filme, dt_lancamento, poster_filme FROM tb_filme";
+            $query = "SELECT id_filme, nm_filme, dt_lancamento, poster_filme FROM tb_filme
+            ORDER BY id_filme DESC";
             $result = pg_query($conn, $query);
 
             // Exibir os cards com base nos resultados do banco de dados
