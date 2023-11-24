@@ -17,14 +17,14 @@ include("config3.php");
 if (isset($_GET['id'])) {
     $filme_id = $_GET['id'];
 
-    // Consulta SQL para obter as informações do filme
+    //SQL para obter as informações do filme
     $sql_filme = "SELECT * FROM tb_filme WHERE id_filme = :id";
     $stmt_filme = $pdo->prepare($sql_filme);
     $stmt_filme->bindParam(':id', $filme_id, PDO::PARAM_INT);
     $stmt_filme->execute();
     $filme = $stmt_filme->fetch(PDO::FETCH_ASSOC);
 
-    // Consulta SQL para obter as informações da revisão
+    // SQL para obter as informações da crítica
     $sql_review = "SELECT * FROM tb_review WHERE id_filme = :id AND id_usuario = :id_usuario";
     $stmt_review = $pdo->prepare($sql_review);
     $stmt_review->bindParam(':id', $filme_id, PDO::PARAM_INT);
@@ -33,16 +33,16 @@ if (isset($_GET['id'])) {
     $review = $stmt_review->fetch(PDO::FETCH_ASSOC);
 
     $sql_diretor = "SELECT nm_diretor FROM tb_diretor A, tb_filme B WHERE A.id_diretor = B.id_diretor AND id_filme = :id";
-$stmt_diretor = $pdo->prepare($sql_diretor);
-$stmt_diretor->bindParam(':id', $filme_id, PDO::PARAM_INT);
-$stmt_diretor->execute();
-$diretor = $stmt_diretor->fetch(PDO::FETCH_ASSOC);
+    $stmt_diretor = $pdo->prepare($sql_diretor);
+    $stmt_diretor->bindParam(':id', $filme_id, PDO::PARAM_INT);
+    $stmt_diretor->execute();
+    $diretor = $stmt_diretor->fetch(PDO::FETCH_ASSOC);
 
-$sql_pais = "SELECT nm_pais FROM tb_pais A, tb_filme B WHERE A.id_pais = B.id_pais AND id_filme = :id";
-$stmt_pais = $pdo->prepare($sql_pais);
-$stmt_pais->bindParam(':id', $filme_id, PDO::PARAM_INT);
-$stmt_pais->execute();
-$pais = $stmt_pais->fetch(PDO::FETCH_ASSOC);
+    $sql_pais = "SELECT nm_pais FROM tb_pais A, tb_filme B WHERE A.id_pais = B.id_pais AND id_filme = :id";
+    $stmt_pais = $pdo->prepare($sql_pais);
+    $stmt_pais->bindParam(':id', $filme_id, PDO::PARAM_INT);
+    $stmt_pais->execute();
+    $pais = $stmt_pais->fetch(PDO::FETCH_ASSOC);
 
     if ($filme) {
         ?>
@@ -81,7 +81,6 @@ $pais = $stmt_pais->fetch(PDO::FETCH_ASSOC);
 
             <div class="centro" id="centroTrabalhe">
                 <form action="banco_editar_review.php" method="POST" enctype="multipart/form-data">
-                    <!-- Adicione os campos do formulário preenchidos com as informações atuais do filme e da revisão -->
                     <input type="hidden" name="id_filme" value="<?php echo $filme['id_filme']; ?>">
                     <input type="hidden" name="id_review" value="<?php echo $review['id_review']; ?>">
                     <div class="form-header">
@@ -98,7 +97,6 @@ $pais = $stmt_pais->fetch(PDO::FETCH_ASSOC);
 
     <div class="todosInputs">
     <div class="inputBox">
-        <!-- Adicione os campos do formulário preenchidos com as informações atuais do filme e da revisão -->
         <label id="tituloGenero" for="nota">Nota:</label>
         <div class="inputGenero">
 

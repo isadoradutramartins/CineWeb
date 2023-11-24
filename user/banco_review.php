@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nm_review = $_POST['nm_review'];
     $ds_review = $_POST['ds_review'];
 
-    // Adapte essa consulta para inserir os dados no seu banco de dados
     $sql_insert = "INSERT INTO tb_review (id_filme, id_usuario, nota_review, nm_review, ds_review) 
                    VALUES (:id_filme, :id_usuario, :nota, :nm_review, :ds_review)";
     $stmt_insert = $pdo->prepare($sql_insert);

@@ -5,7 +5,7 @@ include("config3.php");
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_review'])) {
     $id_review = $_GET['id_review'];
 
-    // Preparar a consulta SQL para excluir a revisão
+    // SQL para excluir a revisão
     $sql = "DELETE FROM tb_review WHERE id_review = :id_review AND id_usuario = :id_usuario";
     $stmt = $pdo->prepare($sql);
 
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_review'])) {
         echo "Erro ao preparar a consulta.";
     }
 } else {
-    echo "ID de revisão não fornecido.";
+    echo "ID da review não fornecido.";
 }
 ?>
 

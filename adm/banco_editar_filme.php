@@ -12,10 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $opcoes = isset($_POST["opcoes"]) ? $_POST["opcoes"] : array();
 
     try {
-        // Inicie uma transação
+        // Iniciando uma transação
         $pdo->beginTransaction();
 
-        // 1. Atualize as informações do filme na tabela tb_filme
+        // 1. Atualizando as informações do filme na tabela tb_filme
         $sql = "UPDATE tb_filme SET nm_filme = :nm_filme, dt_lancamento = :dt_lancamento, id_diretor = :diretor, id_pais = :pais WHERE id_filme = :id_filme";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nm_filme', $nm_filme);
@@ -25,13 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':id_filme', $id_filme);
 
         if ($stmt->execute()) {
-            // 2. Limpe todos os registros da tabela tb_genero_filme para o filme em questão
+            // 2. Deletando todos os registros da tabela tb_genero_filme para o filme em questão
             $sqlDelete = "DELETE FROM tb_genero_filme WHERE id_filme = :id_filme";
             $stmtDelete = $pdo->prepare($sqlDelete);
             $stmtDelete->bindParam(':id_filme', $id_filme);
             $stmtDelete->execute();
 
-            // 3. Insira os novos registros na tabela tb_genero_filme para refletir as seleções do usuário
+            // 3. Inserindo os novos registros na tabela tb_genero_filme
             $sqlInsert = "INSERT INTO tb_genero_filme (id_filme, id_genero) VALUES (:id_filme, :id_genero)";
             $stmtInsert = $pdo->prepare($sqlInsert);
             $stmtInsert->bindParam(':id_filme', $id_filme);
@@ -41,18 +41,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmtInsert->execute();
             }
 
-            // Confirme a transação
+            // Confirmando a transação
             $pdo->commit();
 
             // Atualização bem-sucedida
-            header("Location: filmes.php"); // Redirecione para a página de filmes ou outra página desejada
+            header("Location: filmes.php"); // Redirecionando para a página de filmes
             exit();
         } else {
             // Erro ao atualizar o registro
             echo "Erro ao atualizar o filme no banco de dados.";
         }
     } catch (PDOException $e) {
-        // Em caso de erro, desfaça a transação
+        // Em caso de erro, desfazer a transação
         $pdo->rollBack();
         echo "Erro: " . $e->getMessage();
     }

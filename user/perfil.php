@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+// Verifica se a variável de sessão existe
+if (isset($_SESSION['id_usuario'])) {
+    // O usuário está autenticado
+    $id_usuario_autenticado = $_SESSION['id_usuario'];
+} else {
+    // Redireciona para a página de login se não estiver autenticado
+    header("Location: ..//login.php");
+    exit();
+}
 include ("config3.php");
 ?>
 <!DOCTYPE html>
@@ -43,7 +53,7 @@ include ("config3.php");
         </div>
     </header>
 <?php
-// conexão com o PostgreSQL
+// conexão com o banco
 $conn = pg_connect("host='200.19.1.18' dbname='isadoramartins' user='isadoramartins' password='123456'");
 
 if (!$conn) {

@@ -68,8 +68,6 @@ function sair() {
 
     if ($filme) {
     ?>
-
-       <!-- <form action="banco_editar_filme.php" method="post" enctype="multipart/form-data">-->
             <input type="hidden" name="id" value="<?php echo $filme['id_filme']; ?>">
 
             <div class="todosInputs">
@@ -85,7 +83,7 @@ function sair() {
 
 
             <?php
-            // Execute uma consulta SQL para obter os gêneros associados a este filme
+            // consulta SQL para obter os gêneros associados a este filme
              $sqlGenerosFilme = "SELECT id_genero FROM tb_genero_filme WHERE id_filme = :id_filme";
              $stmtGenerosFilme = $pdo->prepare($sqlGenerosFilme);
              $stmtGenerosFilme->bindParam(':id_filme', $filme_id, PDO::PARAM_INT);

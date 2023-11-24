@@ -115,8 +115,7 @@ function sair() {
                             <label for="nota">5</label>
                         </div>
                     </div>
-        
-                <!--TÍTULO REVIEW-->
+    
                 <div class="todosInputs">
                         <div class="inputBox">
                             <label for="titulo"> Título da avaliação: (opcional) </label>

@@ -46,7 +46,7 @@ function sair() {
     <section class="filmes">
     <h1 class="titulo">Últimas reviews</h1> 
     <?php
-// conexão com o PostgreSQL
+// conexão com o banco
 $conn = pg_connect("host='200.19.1.18' dbname='isadoramartins' user='isadoramartins' password='123456'");
 
 if (!$conn) {

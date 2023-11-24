@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+// Verifica se a variável de sessão existe
+if (isset($_SESSION['id_usuario'])) {
+    // O usuário está autenticado
+    $id_usuario_autenticado = $_SESSION['id_usuario'];
+} else {
+    // Redireciona para a página de login se não estiver autenticado
+    header("Location: ..//login.php");
+    exit();
+}
 include ("config3.php");
 ?>
 <!DOCTYPE html>
@@ -65,7 +76,7 @@ function sair() {
                 echo "Nenhum filme encontrado.";
             }
 
-            // Fechar a conexão com o banco de dados
+            // Fecha a conexão com o banco de dados
             pg_close($conn);
         ?>
     </div>

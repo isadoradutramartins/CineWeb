@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha_md5 = md5($senha);
     $selecao_pais = $_POST['selecao_pais'];
 
-    // Inserir os dados no banco de dados
+    // Inserindo os dados no banco de dados
     $sql = "INSERT INTO TB_USUARIO (nm_usuario, email_usuario, senha_usuario, dt_nascimento, id_pais) VALUES (:nome, :email, :senha_md5, :nascimento, :selecao_pais)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':nome', $nome);
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':selecao_pais', $selecao_pais);
     $stmt->execute();
 
-    header("Location: user/home.php"); // Redirecione para a página de filmes ou outra página desejada
+    header("Location: login.php"); 
     exit();
 }
 

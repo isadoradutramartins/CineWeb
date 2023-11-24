@@ -86,7 +86,7 @@ $dados = $stmt->fetchAll();
 echo '<form method="post" action="banco_cadastrar_filme.php">';
 echo '<div class="inputgenero">';
 
-// Gere as checkboxes a partir dos dados do banco de dados
+// checkboxes com os dados do banco de dados
 foreach ($dados as $item) {
     $id = $item['id_genero'];
     $nome = $item['nm_genero'];
