@@ -127,8 +127,8 @@ $pais = $stmt_pais->fetch(PDO::FETCH_ASSOC);
         </div>
     </div>
 </div>
-<div class="todosInputs">
-                        <div class="inputBox">
+                 <div class="todosInputs">
+                    <div class="inputBox">
 
                     <label for="nm_review">Título da avaliação:</label>
                     <input type="text" name="nm_review" value="<?php echo $review['nm_review']; ?>">
@@ -137,7 +137,9 @@ $pais = $stmt_pais->fetch(PDO::FETCH_ASSOC);
                     <label for="ds_review">Escreva aqui sua review:</label>
                     <textarea name="ds_review" rows="5" cols="33" required><?php echo $review['ds_review']; ?></textarea>
 
+                    <div class="botaoEnviar">
                     <input type="submit" value="Atualizar">
+                  </div>
                 </form>
             </div>
         </body>

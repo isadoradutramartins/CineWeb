@@ -14,7 +14,7 @@ if (isset($_SESSION['id_usuario'])) {
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title> TESTE CRUD </title>
+    <title> Home </title>
     <link rel="icon" type="imagem/png" href="cineweb.png" width="900" height="1000" />
     <link href="css/estiloFilmes.css" rel="stylesheet" />
     <link href="css/estiloMinhasReviews.css" rel="stylesheet" />
