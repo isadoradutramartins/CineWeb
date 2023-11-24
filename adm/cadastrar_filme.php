@@ -23,6 +23,14 @@ if (isset($_SESSION['id_usuario'])) {
     <link href="css/estilo.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta charset="utf-8">
+
+    <script>
+function sair() {
+        if (confirm('Tem certeza que deseja sair?')) {
+            window.location.href = '..//index.php';
+        }
+    }
+</script>
 </head>
 <body bgcolor="#f8e1e1">
 <div class="background">
@@ -34,7 +42,7 @@ if (isset($_SESSION['id_usuario'])) {
                 <a class="link" href="filmes.php">Filmes</a>
                 <a class="link" href="cadastrar_filme.php">Cadastrar Filme</a>
                 <a class="link" href="cadastrar_adm.php">Cadastrar Administrador</a>
-                <a class="link" href="..//index.php">Sair</a>
+                <a class="link" onclick="sair()">Sair</a>
             </nav>
         </div>
     </header>

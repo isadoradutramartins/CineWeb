@@ -74,7 +74,6 @@ if (!$conn) {
 ?>
 <div class="container">
         <div class="wrapper">
-        <p><?php echo $primeiroNome;?></p><br>
         <img src="<?php echo $row['poster_filme']; ?>">
         </div>
          <div class="button-wrapper"> 
@@ -82,10 +81,11 @@ if (!$conn) {
             <h2>Nota: <?php echo $row['nota_review'];?></h2><br>
             <h3><?php echo $row['nm_review'];?></h3><br>
           <p><?php echo $row['ds_review'];?></p><br>
-          <div class="data">
-        <p><?php echo date('d/m/y', strtotime($row['dt_review'])); ?></p><br>
-    </div>
          </div>
+         <div class="nome">
+<p><?php echo $primeiroNome;?></p><br>
+<p><?php echo date('d/m/y', strtotime($row['dt_review'])); ?></p><br>
+        </div>
            </div>
        </div>
 <?php

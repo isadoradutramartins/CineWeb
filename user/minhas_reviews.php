@@ -68,9 +68,6 @@ if (!$conn) {
 ?>
 <div class="container">
         <div class="wrapper">
-        <div class="data">
-        <p><?php echo date('d/m/y', strtotime($row['dt_review'])); ?></p><br>
-    </div>
         <img src="<?php echo $row['poster_filme']; ?>">
          </div>
          <div class="button-wrapper"> 
@@ -81,7 +78,6 @@ if (!$conn) {
           <div class="botao">
           <a class="button" href="editar_review.php?id=<?php echo $row['id_filme']; ?>">Editar</a>
           <a class="button" href="#" onclick="excluirReview(<?php echo $row['id_review']; ?>)">Excluir</a>
-
         </div>
          </div>
            </div>
