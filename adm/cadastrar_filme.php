@@ -42,7 +42,7 @@ function sair() {
                 <a class="link" href="filmes.php">Filmes</a>
                 <a class="link" href="cadastrar_filme.php">Cadastrar Filme</a>
                 <a class="link" href="cadastrar_adm.php">Cadastrar Administrador</a>
-                <a class="link" onclick="sair()">Sair</a>
+                <a class="link" onclick="sair()" href="logout.php">Sair</a>
             </nav>
         </div>
     </header>

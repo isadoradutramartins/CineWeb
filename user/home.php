@@ -39,7 +39,7 @@ function sair() {
                 <a class="link" href="filmes_user.php">Filmes</a>
                 <a class="link" href="minhas_reviews.php">Minhas reviews</a>
                 <a class="link" href="perfil.php">Perfil</a>
-                <a class="link" onclick="sair()">Sair</a>
+                <a class="link" onclick="sair()" href="logout.php">Sair</a>
             </div>
             </nav>
         </div>
@@ -83,8 +83,8 @@ if (!$conn) {
           <p><?php echo $row['ds_review'];?></p><br>
          </div>
          <div class="nome">
-<p><?php echo $primeiroNome;?></p><br>
-<p><?php echo date('d/m/y', strtotime($row['dt_review'])); ?></p><br>
+            <p><?php echo $primeiroNome;?></p><br>
+            <p><?php echo date('d/m/y', strtotime($row['dt_review'])); ?></p><br>
         </div>
            </div>
        </div>
